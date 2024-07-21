@@ -59,8 +59,8 @@ router.post(
     async (req: Request, res: Response, next: NextFunction) => {
       try {
         
-       const{file,email}=req.body
-      const send=await sendEmail(email,file)       
+       const{file,data}=req.body
+      const send=await sendEmail(data,file)       
       if(send.rejected.length < 1){
         res.send(
           createResponse(
